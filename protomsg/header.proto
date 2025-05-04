@@ -1,0 +1,10 @@
+syntax = "proto3";
+package protomsg;
+
+option go_package = "/;protomsg";
+// ProtoHeader定义了RPC请求的头部信息
+message ProtoHeader {
+  string service_method = 1; // 服务方法名，格式为 "Service.Method"
+  uint64 seq = 2;           // 客户端选择的序列号
+  string error = 3;         // 错误信息
+}
